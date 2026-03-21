@@ -82,19 +82,19 @@ jobs:
         run: |
           mkdir -p opa-policies
           cat > opa-policies/vpn_policy.rego << 'EOF'
-          package vpn.security
+package vpn.security
 
-          algorithmes_autorises := ["AES-256-GCM", "AES-128-GCM"]
-          ike_versions_autorisees := ["ikev2"]
+algorithmes_autorises := ["AES-256-GCM", "AES-128-GCM"]
+ike_versions_autorisees := ["ikev2"]
 
-          cipher_fort {
-              input.cipher == algorithmes_autorises[_]
-          }
+cipher_fort {
+    input.cipher == algorithmes_autorises[_]
+}
 
-          ikev2_obligatoire {
-              input.ike_version == ike_versions_autorisees[_]
-          }
-          EOF
+ikev2_obligatoire {
+    input.ike_version == ike_versions_autorisees[_]
+}
+EOF
 
       - name: Vérifier politique cipher AES-256-GCM
         run: |
@@ -219,5 +219,5 @@ jobs:
           echo "✓ Scripts      — syntaxe validée"
           echo "✓ Ansible      — playbooks validés"
           echo "========================================"
-          echo "   PIPELINE TERMINÉ AVEC SUCCÈS !!!!"
+          echo "   PIPELINE TERMINÉ AVEC SUCCÈS !!!!!"
           echo "========================================"
