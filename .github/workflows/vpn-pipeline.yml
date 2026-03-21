@@ -78,24 +78,11 @@ jobs:
           sudo mv opa /usr/local/bin/
           opa version
 
-      - name: Créer les politiques OPA
+      - name: Vérifier que la politique OPA existe
         run: |
-          mkdir -p opa-policies
-          cat > opa-policies/vpn_policy.rego << 'EOF'
-package vpn.security
-
-algorithmes_autorises := ["AES-256-GCM", "AES-128-GCM"]
-ike_versions_autorisees := ["ikev2"]
-
-cipher_fort {
-    input.cipher == algorithmes_autorises[_]
-}
-
-ikev2_obligatoire {
-    input.ike_version == ike_versions_autorisees[_]
-}
-EOF
-
+          ls opa-policies/vpn_policy.rego && \
+          echo "✓ Politique OPA trouvée" || \
+          (echo "✗ Politique OPA manquante" && exit 1)
       - name: Vérifier politique cipher AES-256-GCM
         run: |
           echo '{"cipher": "AES-256-GCM", "ike_version": "ikev2"}' | \
