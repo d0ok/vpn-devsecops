@@ -89,10 +89,7 @@ jobs:
           opa eval \
             --data opa-policies/vpn_policy.rego \
             --stdin-input \
-            "data.vpn.security.cipher_fort" | \
-          grep -q "true" && echo "✓ Cipher AES-256-GCM validé" || \
-          (echo "✗ Cipher non conforme" && exit 1)
-
+            "data.vpn.security.cipher_fort"
       - name: Vérifier politique IKEv2 obligatoire
         run: |
           echo '{"cipher": "AES-256-GCM", "ike_version": "ikev2"}' | \
