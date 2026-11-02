@@ -167,8 +167,6 @@ hping3 ...                            # DoS simulation
 
 ## 📚 Documentation
 
-The theoretical study (DevSecOps, IPSec vs TLS, IaC, Terraform, Ansible, security tools, CI/CD) is available in [`docs/`](docs/).
-
 Useful references:
 
 - [IBM, What is DevSecOps](https://www.ibm.com/think/topics/devsecops)
@@ -195,4 +193,4 @@ This project is for **educational purposes** (end-of-year project). All attack s
 
 ## 📄 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See [`LICENCE/`](LICENCE) for more information.
