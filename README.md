@@ -193,4 +193,4 @@ This project is for **educational purposes** (end-of-year project). All attack s
 
 ## 📄 License
 
-Distributed under the MIT License. See [`LICENCE/`](LICENCE) for more information.
+Distributed under the MIT License. See [`LICENCE`](LICENCE) for more information.
