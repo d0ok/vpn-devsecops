@@ -137,7 +137,7 @@ vpn-devsecops/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-username>/vpn-devsecops.git
+git clone https://github.com/d0ok/vpn-devsecops.git
 cd vpn-devsecops
 
 # 2. Provision network / firewall rules
